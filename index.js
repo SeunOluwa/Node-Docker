@@ -11,12 +11,10 @@ const {
   MONGO_PORT,
   REDIS_URL,
   SESSION_SECRET,
-  REDIS_PORT,
 } = require("./config/config");
 
 const redisClient = redis.createClient({
-  host: REDIS_URL,
-  port: REDIS_PORT,
+  url: REDIS_URL,
 });
 redisClient.connect().catch((e) => console.log(e));
 

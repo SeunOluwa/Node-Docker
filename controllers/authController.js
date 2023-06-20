@@ -10,7 +10,7 @@ exports.signUp = async (req, res) => {
       username,
       password: hashedPassword,
     });
-    req.sessions.user = newUser;
+    req.session.user = newUser;
     res.status(201).json({ status: "success", data: { user: newUser } });
   } catch (error) {
     res.status(400).json({ status: "fail" });
